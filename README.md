@@ -42,7 +42,7 @@ cd job-application-template
 
 GitHub의 **Code → Download ZIP**으로 파일을 받거나 필요한 파일 본문을 복사하세요.
 
-`AGENTS.md`, `workflows/apply-to-posting.md`, `templates/` 안의 Markdown 파일을 각각 첨부하거나 붙여넣습니다. 공고 처리 시 본인이 확인한 facts와 정리본도 함께 전달하세요.
+`에이전트별진입파일(CLAUDE/GEMINI/AGENTS).md`, `workflows/apply-to-posting.md`, `templates/` 안의 Markdown 파일을 각각 첨부하거나 붙여넣습니다. 공고 처리 시 본인이 확인한 facts와 정리본도 함께 전달하세요.
 
 ## 3. 내 자료 정리
 
