@@ -2,7 +2,7 @@
 
 내 경험과 채용공고를 바탕으로 회사가 요구한 지원 문서 초안을 만드는 템플릿입니다.
 
-AI가 알아서 기업 분석
+AI가 알아서 기업 분석, 직무 적합성 분석 및 자기소개서 초안 세트를 만들어줍니다.
 
 ## 1. 준비할 자료
 
@@ -24,7 +24,7 @@ git clone https://github.com/bnbong/job-application-template.git
 cd job-application-template
 ```
 
-설치와 로그인을 마친 도구를 이 프로젝트 폴더에서 실행하고 아래 프롬프트를 전달하세요.
+설치와 로그인을 마친 도구를 이 프로젝트 폴더에서 실행하고 [아래 프롬프트](https://github.com/bnbong/job-application-template#3-%EB%82%B4-%EC%9E%90%EB%A3%8C-%EC%A0%95%EB%A6%AC)를 전달하세요.
 
 ### 일반 AI 채팅
 
