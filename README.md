@@ -4,6 +4,8 @@
 
 AI가 알아서 기업 분석, 직무 적합성 분석 및 자기소개서 초안 세트를 만들어줍니다.
 
+자나깨나 할루시네이션을 조심하며, 산출물은 직접 검증해주세요.
+
 ## 1. 준비할 자료
 
 - 경험 입력용 [`templates/intake.md`](templates/intake.md): 학력·경력·프로젝트의 기간, 역할, 성과와 근거
@@ -24,7 +26,7 @@ git clone https://github.com/bnbong/job-application-template.git
 cd job-application-template
 ```
 
-설치와 로그인을 마친 도구를 이 프로젝트 폴더에서 실행하고 [아래 프롬프트](#3-내-자료-정리)를 전달하세요.
+에이전트 도구를 이 프로젝트 폴더에서 실행하고 [아래 프롬프트](#3-내-자료-정리)를 전달하세요.
 
 도구마다 처음 읽히게하는 진입 파일이 다릅니다.
 
@@ -34,7 +36,7 @@ cd job-application-template
 | Claude Code | `CLAUDE.md` |
 | Gemini CLI | `GEMINI.md` |
 
-세 파일은 모두 같은 `AGENTS.md`와 `workflows/apply-to-posting.md`를 불러오므로 도구가 따르는 규칙은 동일합니다.
+세 파일은 같은 작업 규약을 각각 온전히 담고 있어서 어느 하나만 있어도 동작합니다. 공고 처리 절차는 `workflows/apply-to-posting.md`에 있습니다.
 
 표에 없는 AI도구를 사용한다면 3절 프롬프트의 첫 줄처럼 `AGENTS.md`를 읽으라고 직접 지시하면 됩니다.
 
@@ -49,7 +51,7 @@ GitHub의 **Code → Download ZIP**으로 파일을 받거나 필요한 파일 �
 처음 한 번 다음 프롬프트를 전달하세요.
 
 ```text
-AGENTS.md와 workflows/apply-to-posting.md를 읽고 따른다.
+작업 지침 파일(AGENTS.md, CLAUDE.md, GEMINI.md 중 하나)과 workflows/apply-to-posting.md를 읽고 따른다.
 templates/intake.md를 inputs/intake.md로, templates/preferences.md를 docs/preferences.md로,
 templates/facts.md를 docs/facts.md로 만들어라.
 자료가 비어 있으면 필요한 사실을 질문하고, 근거 없는 내용은 만들지 마라.
@@ -59,6 +61,7 @@ templates/facts.md를 docs/facts.md로 만들어라.
 ```
 
 `docs/facts.md`의 기간·역할·성과·수치와 `{{확인 필요: ...}}` 항목을 직접 확인하세요.
+
 확인이 끝나면 다음 요청으로 정리본 3종을 만듭니다.
 
 ```text
@@ -71,7 +74,7 @@ docs/portfolio/portfolio.md, docs/coverletter/coverletter.md를 작성하라.
 정리본을 확인한 뒤 공고와 함께 다음 프롬프트를 전달하세요.
 
 ```text
-AGENTS.md와 workflows/apply-to-posting.md를 따라 이 공고를 처리하라.
+작업 지침 파일(AGENTS.md, CLAUDE.md, GEMINI.md 중 하나)과 workflows/apply-to-posting.md를 따라 이 공고를 처리하라.
 공고 URL 또는 원문: {{입력}}
 공식 웹 자료와 한경컨센서스를 조사해 별도 내부 검토용 company_analysis.md를 반드시 작성하라.
 공고에서 실제로 요구한 제출용 서류만 작성하고, 확인하지 못한 문항이나 한도는 추정하지 마라.
@@ -95,16 +98,13 @@ DART API 수집 도구는 API 키가 필요해서 이 템플릿에서 제외했�
 
 ## 5. 제출 전 검토
 
-- 작성된 사실, 공고 문항과 한도, 남은 `{{확인 필요: ...}}`를 원문과 대조합니다.
-- 자수 검증은 필수입니다. 제공된 스크립트를 쓰려면 Python 3.10 이상이 필요합니다.
+1. 작성된 사실, 공고 문항과 한도, 남은 `{{확인 필요: ...}}`를 원문과 대조합니다.
+2. 제출 전 글자 수 검토는 직접 수행하세요.
+3. Git push 전에는 민감한 정보가 업로드되지 않도록 파일 추적 상태를 직접 확인하세요.
 
 ```bash
 python3 scripts/count_essay_chars.py <만들어진 초안세트 폴더>/coverletter.md
 ```
-
-제출 전 글자 수 검토는 직접 수행하세요.
-
-Git push 전에는 파일 추적 상태를 직접 확인하세요.
 
 참고용 완성본(가상의 회사 분석 예제): [`examples/fictional/`](examples/fictional/)
 
