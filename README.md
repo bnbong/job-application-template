@@ -77,12 +77,12 @@ docs/portfolio/portfolio.md, docs/coverletter/coverletter.md를 작성하라.
 작업 지침 파일(AGENTS.md, CLAUDE.md, GEMINI.md 중 하나)과 workflows/apply-to-posting.md를 따라 이 공고를 처리하라.
 공고 URL 또는 원문: {{입력}}
 공식 웹 자료와 한경컨센서스를 조사해 별도 내부 검토용 company_analysis.md를 반드시 작성하라.
-공고에서 실제로 요구한 제출용 서류만 작성하고, 확인하지 못한 문항이나 한도는 추정하지 마라.
+공고에서 실제로 요구한 제출용 서류를 작성하고, 원문에서 확인하지 못한 문항이나 서류는 `(추정)`으로 표기하되 글자 수 한도에 임의의 숫자를 넣지 마라.
 마지막에 templates/report.md 형식으로 검증 상태와 남은 확인 사항을 기록하라.
 커밋하거나 제출하지 마라.
 ```
 
-결과는 `job_applications/<연도>/<first_half|second_half>/<회사>/` 아래에 생성되며, 기본 결과물은 `JD.md`, `company_analysis.md`, 공고가 요구한 지원 문서, `report.md`입니다.
+결과는 `job_applications/<연도>/<first_half|second_half>/<회사>/` 아래에 생성되며, 기본 결과물은 `JD.md`, `company_analysis.md`, 공고가 요구한 제출용 서류(`coverletter.md`, `resume.md`, `portfolio.md` 등), `report.md`로 이루어진 초안 세트입니다.
 
 검증 기준과 전체 순서는 [`workflows/apply-to-posting.md`](workflows/apply-to-posting.md)를 따릅니다.
 
