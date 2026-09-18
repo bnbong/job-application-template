@@ -14,7 +14,8 @@
 시작 전, 로컬에 이 프로젝트 clone:
 
 ```bash
-git clone <remote repository URL>
+$ git clone https://github.com/bnbong/job-application-template.git
+$ cd job-application-template
 ```
 
 ## 사용자가 준비할 자료와 AI가 만드는 문서
